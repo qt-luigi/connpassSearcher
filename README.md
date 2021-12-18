@@ -22,6 +22,25 @@ Usage of ./connpassSearcher:
   -y int
     	year to hold event (default this year)
 ```
+## Example
+
+```sh
+$ date
+2021年 12月18日 土曜日 16時41分19秒 JST
+
+$ ./connpassSearcher -k Go (other parameters are default: -k 2021 -m 12)
+12/1(水) 19:00〜21:30 [オンライン] Go Language Specification 輪読会 #32 https://gospecreading.connpass.com/event/231503/
+...
+12/26(日) 14:00〜17:00 [オンライン] 香川Go言語  わいわい会 (GAMEを作ろう)#3 https://gdgshikoku.connpass.com/event/233967/
+
+$ ./connpassSearcher -k Go -y 2020 (other parameter is default: -m 12)
+12/9(水) 19:00〜21:30 [オンライン] Go Language Specification輪読会 #11 https://gospecreading.connpass.com/event/197221/
+...
+12/26(土) 10:00〜12:00 [オンライン] 【オンライン】Women Who Go Tokyo ハンズオン - Go言語で作るインタプリタ#4 https://womenwhogo-tokyo.connpass.com/event/199316/
+
+$ ./connpassSearcher -k Python (other parameters are default: -k 2021 -m 12)
+results_available over 100
+```
 
 ## Thanks
 
