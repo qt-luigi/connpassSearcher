@@ -4,7 +4,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -54,14 +53,16 @@ func main() {
 	}
 	params, err := connpass.SearchParam(param...)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 
 	cli := connpass.NewClient()
 	ctx := context.Background()
 	r, err := cli.Search(ctx, params)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 
 	if r.Available > 100 {
